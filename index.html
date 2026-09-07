@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Fiscal 3.0 Pro</title>
+    <title>Motor ERP - Fiscal Pro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -152,7 +152,7 @@
         <div>
             <div class="flex items-center gap-3 mb-10 text-xl font-bold tracking-tight text-blue-600">
                 <i data-lucide="zap" class="text-blue-500 fill-blue-500"></i>
-                CALCULADORA FISCAL PRO
+                FISCAL PRO
             </div>
             
             <nav class="space-y-2">
@@ -173,7 +173,7 @@
                 <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white">
                     MS
                 </div>
-                <span class="text-sm font-semibold text-slate-700">USER</span>
+                <span class="text-sm font-semibold text-slate-700">MANOEL S.</span>
             </div>
             
             <!-- ASSINATURA DO DESENVOLVEDOR -->
@@ -608,7 +608,7 @@
             // Retenções Federais (Só se não for Simples. CSRF regra > 5000 extinta p/ > 215, IRRF regra geral)
             if (regimePrestador !== 'simples') {
                 let calcIRRF = bruto * (aliqIRRF / 100);
-                if (calcIRRF > 10.00) retIRRF = calcIRRF; // Regra > R$ 10,00 mantida
+                retIRRF = calcIRRF; // Retenção calculada independente do valor (regra personalizada)
 
                 let calcCSRF = bruto * (aliqCSRF / 100);
                 if (calcCSRF > 10.00) retCSRF = calcCSRF; // Regra atualizada CSRF
